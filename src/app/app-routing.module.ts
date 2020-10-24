@@ -7,10 +7,10 @@ import { LoginComponent } from './pages/login/login.component';
 import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
+  { path: 'login'   , component: LoginComponent },
   // Se especifica que rutas van a tener la auteticacion, con el canActivate[AuthGuard]
   { path: 'home'    , component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'registro', component: RegistroComponent },
-  { path: 'login'   , component: LoginComponent },
   { path: '**', redirectTo: 'registro' }
 ];
 
