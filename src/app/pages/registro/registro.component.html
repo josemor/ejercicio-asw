@@ -1,0 +1,89 @@
+<div class="limiter animated fadeInRight">
+  <div class="container-login100">
+    <div class="wrap-login100 p-t-50 p-b-90">
+      <form
+        (ngSubmit)="onSubmit(registroForm)"
+        #registroForm="ngForm"
+        class="login100-form validate-form flex-sb flex-w"
+      >
+        <span class="login100-form-title p-b-51"> Crear cuenta </span>
+
+        <span
+          *ngIf="
+            registroForm.submitted && registroForm.controls['email'].errors
+          "
+          class="text-danger animated fadeIn"
+          >El correo es obligatorio</span
+        >
+        <div class="wrap-input100 m-b-16">
+          <input
+            class="input100"
+            type="email"
+            name="email"
+            [(ngModel)]="usuario.email"
+            required
+            email
+            placeholder="Ej: usuario@dominio.com"
+          />
+
+          <span class="focus-input100"></span>
+        </div>
+
+        <span
+        *ngIf="
+          registroForm.submitted && registroForm.controls['nombre'].errors
+        "
+        class="text-danger animated fadeIn"
+        >El nombre y apellido es obligatorio</span
+      >
+        <div class="wrap-input100 m-b-16">
+          <input
+            class="input100"
+            type="text"
+            name="nombre"
+            required
+            minlength="2"
+            [(ngModel)]="usuario.nombre"
+            placeholder="Nombre y apellidos"
+          />
+
+          <span class="focus-input100"></span>
+        </div>
+
+        <span
+        *ngIf="
+          registroForm.submitted && registroForm.controls['password'].errors
+        "
+        class="text-danger animated fadeIn"
+        >La contraseña debe tener más de 6 caracteres</span
+      >
+        <div class="wrap-input100 m-b-16" data-validate="Password is required">
+          <input
+            class="input100"
+            type="password"
+            name="password"
+            required
+            minlength="6"
+            [(ngModel)]="usuario.password"
+            placeholder="Contraseña"
+          />
+          <span class="focus-input100"></span>
+        </div>
+
+        <div class="flex-sb-m w-full p-t-3 p-b-24">
+              <div>
+            <p>¿Ya tienes cuenta? <a routerLink="/login" class="txt1">
+              <small> <b>Iniciar sesión</b></small> 
+           </a></p>
+          </div>
+        </div>
+
+        <div class="container-login100-form-btn m-t-17">
+          <button class="login100-form-btn" type="submit">
+            Crear nueva cuenta
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

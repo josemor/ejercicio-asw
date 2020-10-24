@@ -1,0 +1,15 @@
+.box{
+    margin: 8px;
+    padding: 30px;
+    border-width: 8px;
+    border-radius: 8px;
+    height: 100px;
+    width: 50%;
+    position: relative;
+    left: 20%;
+    
+}
+
+.depliegue {
+    background-color: silver;
+}
